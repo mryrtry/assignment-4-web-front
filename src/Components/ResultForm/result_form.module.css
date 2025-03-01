@@ -1,0 +1,45 @@
+.submit_button {
+  padding: 5px 15px;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1)
+}
+
+.submit_button.disabled {
+  cursor: not-allowed;
+  opacity: 0.3;
+}
+
+.radio_container {
+  margin-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form_radio {
+  transition: .3s;
+  margin-right: 5px;
+}
+
+.form_radio input[type=radio] {
+	display: none;
+}
+
+.form_radio label {
+	display: inline-block;
+	cursor: pointer;
+	padding: 5px 12px;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	border-radius: 5px;
+	user-select: none;
+}
+ 
+.form_radio input[type=radio]:checked + label {
+	background-color: rgba(92, 92, 186, 0.1);
+}
+
+.form_radio:hover {
+  background-color: rgba(92, 92, 186, 0.1);
+  border-radius: 5px;
+}

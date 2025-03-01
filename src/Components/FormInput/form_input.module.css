@@ -1,0 +1,43 @@
+.modal_input_field {
+  padding: 10px 0;
+}
+
+.modal_input_label {
+  letter-spacing: -0.05em;
+}
+
+.modal_input_description {
+  opacity: 0.8;
+  text-transform: uppercase;
+  font-size: 10px;
+  padding: 3px 0;
+}
+
+.modal_input {
+  display: block;
+  padding: 8px 15px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgb(189, 189, 189);
+  min-width: 300px;
+  margin: 5px 0;
+}
+
+.modal_input::placeholder {
+  opacity: 0.4;
+}
+
+.modal_input:focus {
+  border: 1px solid rgba(89, 89, 89);
+}
+
+.modal_input_error_block {
+  height: 10px;
+  margin-bottom: 5px;
+}
+
+.modal_input_error_block p {
+  font-size: 10px;
+  color: rgb(255, 0, 0);
+  letter-spacing: -0.02em;
+}

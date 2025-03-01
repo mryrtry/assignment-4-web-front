@@ -1,0 +1,47 @@
+.wrapper {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  letter-spacing: -0.05em;
+  padding: 10px;
+}
+
+.label_wrapper {
+  padding: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 5px;
+}
+
+.label_wrapper .title {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.label_wrapper .subtitle {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.subject_container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.block {
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 5px;
+}
+
+.block .title {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
+}
