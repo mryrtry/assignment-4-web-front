@@ -2,9 +2,9 @@ const BLOCK_SIZE = 50;
 let CANVAS_CENTRED = false; 
 
 export function central_canvas(canvas) {
-  if (!CANVAS_CENTRED) {
-    canvas.translate(300, 300);
-    CANVAS_CENTRED = true;
+  const transform = canvas.getTransform();
+  if (transform.isIdentity) {
+      canvas.translate(300, 300);
   }
 }
 

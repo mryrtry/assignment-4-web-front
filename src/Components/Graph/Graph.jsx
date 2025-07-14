@@ -5,6 +5,8 @@ import Canvas from "../Canvas/Canvas"
 import style from "./graph.module.css"
 import ResultForm from '../ResultForm/ResultForm';
 import ResultTable from '../ResultTable/ResultTable';
+import formStyle from "../ResultForm/result_form.module.css"
+
 
 export default function Graph() {
 
@@ -13,7 +15,7 @@ export default function Graph() {
 	async function checkIfAuthentificated() {
 		const isAuthentificated = await checkToken();
 		if (!isAuthentificated) {
-			navigate('/');
+			navigate('/web');
 		}
 	}
 
@@ -41,6 +43,10 @@ export default function Graph() {
 		await fetchPoints();
 	}
 
+	function onExit() {
+		navigate("/web")
+	}
+
 
 	useEffect(() => {
 		fetchUser();
@@ -49,7 +55,7 @@ export default function Graph() {
 
   return (
 		<div className={style.wrapper}>
-			<Label user={user}/>
+			<Label user={user} onExit={onExit}/>
 			<div className={style.subject_container}>
 				<div className={style.block} style={{ position: "relative" }}>
 					<p className={style.title}>Координатная плоскость</p>
@@ -64,15 +70,18 @@ export default function Graph() {
 					<ResultTable points={points}/>
 				</div>
 			</div>
+			<button onClick={() => onExit()} className={formStyle.submit_button} style={{ marginTop: "10px" }}>Выйти</button>
 		</div>
   );
 }
 
-function Label({ user }) {
+function Label({ user, onExit }) {
 	return (
 			<div className={style.label_wrapper}>
+				<div>
 					<p className={style.title}>ASSIGNMENT 4 WEB</p>
 					<p className={style.subtitle}>{user ? user.username + " (" + user.id + ")"  : 'User fetch...'}</p>
+				</div>
 			</div>
 	);
 }

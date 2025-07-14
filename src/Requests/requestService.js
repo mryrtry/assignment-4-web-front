@@ -1,5 +1,5 @@
-const userApiUrl = "http://localhost:8080/api/auth";
-const pointsApiUrl = "http://localhost:8080/api/points"
+const userApiUrl = "http://localhost:60222/api/auth";
+const pointsApiUrl = "http://localhost:60222/api/points"
 
 const getRequestOptionsPost = (body, auth) => {
   const headers = new Headers({
@@ -117,7 +117,7 @@ export async function userSignUp(username, password) {
     const response = await fetch(userApiUrl + "/sign-up", requestOptions);
 
     if (response.ok) {
-      userLogIn(username, password);
+      await userLogIn(username, password);
       return;
     }
 
@@ -155,7 +155,7 @@ export async function checkToken() {
     if (!token) return false;
 
     const requestOptions = getRequestOptionsGet(true);
-    const response = await fetch(userApiUrl + "/me", requestOptions);
+    const response = await fetch(userApiUrl, requestOptions);
 
     if (!response.ok) {
       console.error("Ошибка запроса:", response.status, await response.text());
@@ -173,7 +173,7 @@ export async function getUser() {
   try {
     
     const requestOptions = getRequestOptionsGet(true);
-    const response = await fetch(userApiUrl + "/me", requestOptions);
+    const response = await fetch(userApiUrl, requestOptions);
 
     if (!response.ok) {
       console.error("Ошибка запроса:", response.status, await response.text());
@@ -198,7 +198,7 @@ export async function checkPoint(data) {
 
     await delay(1000);
 
-    const response = await fetch(pointsApiUrl + "/check", requestOptions);
+    const response = await fetch(pointsApiUrl, requestOptions);
 
     if (response.ok) {
       data = await response.json();
@@ -216,7 +216,7 @@ export async function checkPoint(data) {
 export async function getPoints() {
   try {
     const requestOptions = getRequestOptionsGet(true);
-    const response = await fetch(pointsApiUrl + "/get-all", requestOptions);
+    const response = await fetch(pointsApiUrl, requestOptions);
 
     if (!response.ok) {
       console.error("Ошибка запроса:", response.status, await response.text());
@@ -233,7 +233,7 @@ export async function getPoints() {
 export async function deletePoints() {
   try {
     const requestOptions = getRequestOptionsDelete(true);
-    const response = await fetch(pointsApiUrl + "/delete-all", requestOptions);
+    const response = await fetch(pointsApiUrl, requestOptions);
 
     if (!response.ok) {
       console.error("Ошибка запроса:", response.status, await response.text());

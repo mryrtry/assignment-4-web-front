@@ -50,7 +50,7 @@ function LoginForm({ setAction }) {
       }
       return;
     } else {
-      navigate('/graph');
+      navigate('/web/graph');
     }
   };
 
@@ -119,7 +119,7 @@ function SignupForm({ setAction }) {
       }
       return;
     } else {
-      navigate('/graph');
+      navigate('/web/graph');
     }
   };
 

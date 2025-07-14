@@ -7,8 +7,8 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<AuthForm />} />
-        <Route path="/graph" element={<Graph/>} />
+        <Route path="web/" element={<AuthForm />} />
+        <Route path="web/graph" element={<Graph/>} />
       </Routes>
     </Router>
     );
